@@ -1,4 +1,4 @@
-﻿using OnionSolution.Domain.Product;
+﻿using OnionSolution.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

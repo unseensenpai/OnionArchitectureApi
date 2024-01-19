@@ -1,0 +1,11 @@
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Domain\bin\Debug\net8.0\OnionSolution.Domain.deps.json
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Domain\bin\Debug\net8.0\OnionSolution.Domain.dll
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Domain\bin\Debug\net8.0\OnionSolution.Domain.pdb
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Domain\obj\Debug\net8.0\OnionSolution.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Domain\obj\Debug\net8.0\OnionSolution.Domain.AssemblyInfoInputs.cache
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Domain\obj\Debug\net8.0\OnionSolution.Domain.AssemblyInfo.cs
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Domain\obj\Debug\net8.0\OnionSolution.Domain.csproj.CoreCompileInputs.cache
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Domain\obj\Debug\net8.0\OnionSolution.Domain.dll
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Domain\obj\Debug\net8.0\refint\OnionSolution.Domain.dll
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Domain\obj\Debug\net8.0\OnionSolution.Domain.pdb
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Domain\obj\Debug\net8.0\ref\OnionSolution.Domain.dll

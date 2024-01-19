@@ -1,0 +1,6 @@
+@OnionSolution.API_HostAddress = http://localhost:5022
+
+GET {{OnionSolution.API_HostAddress}}/api/Products
+Accept: application/json
+
+###

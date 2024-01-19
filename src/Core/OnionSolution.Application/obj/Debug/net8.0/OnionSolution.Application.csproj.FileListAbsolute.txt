@@ -1,0 +1,15 @@
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\bin\Debug\net8.0\OnionSolution.Application.deps.json
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\bin\Debug\net8.0\OnionSolution.Application.dll
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\bin\Debug\net8.0\OnionSolution.Application.pdb
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\bin\Debug\net8.0\OnionSolution.Domain.dll
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\bin\Debug\net8.0\OnionSolution.Domain.pdb
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\obj\Debug\net8.0\OnionSolution.Application.csproj.AssemblyReference.cache
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\obj\Debug\net8.0\OnionSolution.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\obj\Debug\net8.0\OnionSolution.Application.AssemblyInfoInputs.cache
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\obj\Debug\net8.0\OnionSolution.Application.AssemblyInfo.cs
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\obj\Debug\net8.0\OnionSolution.Application.csproj.CoreCompileInputs.cache
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\obj\Debug\net8.0\OnionSolution.Application.csproj.CopyComplete
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\obj\Debug\net8.0\OnionSolution.Application.dll
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\obj\Debug\net8.0\refint\OnionSolution.Application.dll
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\obj\Debug\net8.0\OnionSolution.Application.pdb
+C:\Users\sgulmez\source\repos\OnionArchitecture\OnionSolution\src\Core\OnionSolution.Application\obj\Debug\net8.0\ref\OnionSolution.Application.dll

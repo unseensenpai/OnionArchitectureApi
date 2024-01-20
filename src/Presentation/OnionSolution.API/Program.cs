@@ -2,6 +2,8 @@ using OnionSolution.Persistence.Registrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddJsonFile("appsettings.json", false, true);
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -9,7 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddPersistenceServices();
+builder.Services.AddPersistenceServices(builder.Configuration);
+
 
 var app = builder.Build();
 

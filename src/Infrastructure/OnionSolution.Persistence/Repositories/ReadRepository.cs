@@ -16,18 +16,18 @@ namespace OnionSolution.Persistence.Repositories
 
         public DbSet<T> Table => context.Set<T>();
 
-        public IQueryable<T> GetAll() 
-            => Table;
+        public IQueryable<T> GetAll(bool isTracking = true)
+            => isTracking ? Table : Table.AsNoTracking();
 
-        public IQueryable<T> GetWhere(Expression<Func<T, bool>> expression) 
-            => Table.Where(expression);
+        public IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true)
+            => isTracking ? Table.Where(expression) : Table.AsNoTracking().Where(expression);
 
-        public async Task<T> GetSingleAsync(Expression<Func<T, bool>> expression) 
-            => await Table.FirstOrDefaultAsync(expression);
+        public async Task<T> GetSingleAsync(Expression<Func<T, bool>> expression, bool isTracking = true)
+            => isTracking ? await Table.FirstOrDefaultAsync(expression) : await Table.AsNoTracking().FirstOrDefaultAsync(expression);
 
 
-        public async Task<T> GetByIdAsync(string id) 
-            => await Table.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
+        public async Task<T> GetByIdAsync(string id, bool isTracking = true)
+            => isTracking ? await Table.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id)) : await Table.AsNoTracking().FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
 
 
     }

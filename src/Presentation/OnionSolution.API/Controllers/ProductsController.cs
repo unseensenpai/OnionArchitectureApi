@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnionSolution.Application.Abstractions;
 using OnionSolution.Application.Repositories.ProductRepository;
-using OnionSolution.Domain.Entities;
+using OnionSolution.Domain.Entities.Common;
+using OnionSolution.Domain.Entities.Products;
+using System.ComponentModel.DataAnnotations;
 
 namespace OnionSolution.API.Controllers
 {
@@ -27,6 +29,13 @@ namespace OnionSolution.API.Controllers
         public IActionResult GetProducts()
         {
             var result = productReadRepository.GetAll();
+            return Ok(result);
+        }
+
+        [HttpPost("GetAllProducts")]
+        public IActionResult GetAllProducts([FromBody, Required] PagedSearchParameters pagedSearchParameters)
+        {
+            var result = productReadRepository.GetAll(pagedSearchParameters);
             return Ok(result);
         }
 
@@ -89,12 +98,15 @@ namespace OnionSolution.API.Controllers
             List<Product> products = [];
             for (int i = 0; i < count; i++)
             {
+                ProductFaker productFaker = new();
+                var fakeData = productFaker.Generate();
+
                 products.Add(new()
                 {
-                    Name = $"ÜrünTest-{i * random.Next(i, random.Next(i, 10))}",
+                    Name = $"ÜrünTest-{fakeData.Name}",
                     Orders = [],
-                    Price = i * random.Next(minValue: 1, i * random.Next(1, 10)),
-                    Stock = i * random.Next(1, i * random.Next(1, 10))
+                    Price = fakeData.Price,
+                    Stock = fakeData.Stock
                 });
             }
 

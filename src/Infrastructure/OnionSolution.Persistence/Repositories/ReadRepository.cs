@@ -29,6 +29,9 @@ namespace OnionSolution.Persistence.Repositories
         public async Task<T> GetByIdAsync(string id, bool isTracking = true)
             => isTracking ? await Table.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id)) : await Table.AsNoTracking().FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
 
-
+        public IQueryable<T> GetAll(PagedSearchParameters pagedSearchParameters)
+            => pagedSearchParameters.IsTracking 
+            ? Table.Skip(pagedSearchParameters.PageSize * pagedSearchParameters.PageNumber).Take(pagedSearchParameters.PageSize) 
+            : Table.AsNoTracking().Skip(pagedSearchParameters.PageSize * pagedSearchParameters.PageNumber).Take(pagedSearchParameters.PageSize);
     }
 }

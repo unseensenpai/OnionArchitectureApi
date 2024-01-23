@@ -1,4 +1,4 @@
-﻿using OnionSolution.Domain.Entities;
+﻿using OnionSolution.Domain.Entities.Products;
 
 namespace OnionSolution.Application.Repositories.ProductRepository
 {

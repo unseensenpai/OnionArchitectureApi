@@ -22,12 +22,12 @@ namespace OnionSolution.Persistence.Repositories
         public IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true)
             => isTracking ? Table.Where(expression) : Table.AsNoTracking().Where(expression);
 
-        public async Task<T> GetSingleAsync(Expression<Func<T, bool>> expression, bool isTracking = true)
-            => isTracking ? await Table.FirstOrDefaultAsync(expression) : await Table.AsNoTracking().FirstOrDefaultAsync(expression);
+        public async Task<T> GetSingleAsync(Expression<Func<T, bool>> expression, bool isTracking = true, CancellationToken cancellationToken = default)
+            => isTracking ? await Table.FirstOrDefaultAsync(expression, cancellationToken) : await Table.AsNoTracking().FirstOrDefaultAsync(expression, cancellationToken);
 
 
-        public async Task<T> GetByIdAsync(string id, bool isTracking = true)
-            => isTracking ? await Table.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id)) : await Table.AsNoTracking().FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
+        public async Task<T> GetByIdAsync(string id, bool isTracking = true, CancellationToken cancellationToken = default)
+            => isTracking ? await Table.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id), cancellationToken) : await Table.AsNoTracking().FirstOrDefaultAsync(data => data.Id == Guid.Parse(id), cancellationToken);
 
         public IQueryable<T> GetAll(PagedSearchParameters pagedSearchParameters)
             => pagedSearchParameters.IsTracking 

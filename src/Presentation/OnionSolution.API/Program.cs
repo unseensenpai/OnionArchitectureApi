@@ -1,3 +1,4 @@
+using OnionSolution.API.Extensions;
 using OnionSolution.API.Infrastructure;
 using OnionSolution.Persistence.Registrations;
 using Serilog;
@@ -30,7 +31,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c=>
+    {
+        c.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
+    });
+    app.ApplyMigrations();
 }
 
 app.UseHttpsRedirection();

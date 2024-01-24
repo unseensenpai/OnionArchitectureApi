@@ -22,7 +22,14 @@ namespace OnionSolution.Persistence.Registrations
 
             services.AddDbContext<OnionSolutionEFDbContext>(options =>
             {
-                options.UseNpgsql(configuration.GetConnectionString(Resources.PostgresqlLocal));
+                //options.UseNpgsql(configuration.GetConnectionString(Resources.PostgresqlLocal));
+                options.UseNpgsql(configuration.GetConnectionString(Resources.PostgresqlOrchestration), 
+                    c => c.MigrationsHistoryTable(Resources.EFMigrationHistoryName, Resources.EFMigrationHistorySchemeName));
+            });
+
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = configuration.GetConnectionString(Resources.RegisCacheSectionName);
             });
 
             services.AddScoped<ICustomerWriteRepository, CustomerWriteRepository>();
@@ -31,6 +38,7 @@ namespace OnionSolution.Persistence.Registrations
             services.AddScoped<IOrderReadRepository, OrderReadRepository>();
             services.AddScoped<IProductWriteRepository, ProductWriteRepository>();
             services.AddScoped<IProductReadRepository, ProductReadRepository>();
+            services.AddScoped<ICachedProductRepository, CachedProductRepository>();
         }
     }
 }

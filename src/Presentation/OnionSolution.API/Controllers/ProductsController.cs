@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 using OnionSolution.Application.Abstractions;
 using OnionSolution.Application.Repositories.ProductRepository;
 using OnionSolution.Domain.Entities.Common;
 using OnionSolution.Domain.Entities.Products;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace OnionSolution.API.Controllers
 {
@@ -14,7 +15,8 @@ namespace OnionSolution.API.Controllers
     public class ProductsController(
         IProductService productService,
         IProductReadRepository productReadRepository,
-        IProductWriteRepository productWriteRepository) : ControllerBase
+        IProductWriteRepository productWriteRepository,
+        ICachedProductRepository cache) : ControllerBase
     {
 
         [HttpGet("Get")]
@@ -39,12 +41,17 @@ namespace OnionSolution.API.Controllers
             return Ok(result);
         }
 
+
+
         [HttpGet("GetProductById")]
         public async Task<Product> GetProductById(string guid)
         {
-            var result = await productReadRepository.GetByIdAsync(guid, false);
 
-            return result;
+            var cachedResult = await cache.GetByIdAsync(guid);
+
+            //var result = await productReadRepository.GetByIdAsync(guid, false);
+
+            return cachedResult;
         }
 
         [HttpPost("[Action]")]

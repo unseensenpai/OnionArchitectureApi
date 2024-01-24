@@ -1,0 +1,32 @@
+version: '3.4'
+name: "onion-solution-containers"
+
+services:
+  onionsolution.api:
+    image: ${DOCKER_REGISTRY-}onionsolutionapi
+    container_name: onionsolution.api
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+    build:
+      context: .
+      dockerfile: src/Presentation/OnionSolution.API/Dockerfile
+    ports:
+        - 6005:8080
+        - 6006:8081
+  onionsolution.database:
+    image: postgres:latest
+    container_name: onionsolution.database
+    environment:
+        - POSTGRES_DB=ecommerceonion
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+    volumes:
+        - ./.containers/onionsolution-db:/var/lib/postgresql/data
+    ports:
+        - 5432:5432
+  onionsolution.redis:
+    image: redis:latest
+    restart: always
+    container_name: onionsolution.cache
+    ports:
+        - 6379:6379

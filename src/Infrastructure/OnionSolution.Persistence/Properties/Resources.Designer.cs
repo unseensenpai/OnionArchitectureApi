@@ -61,11 +61,47 @@ namespace OnionSolution.Persistence.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OnionSolutionEFMigrationsHistory.
+        /// </summary>
+        internal static string EFMigrationHistoryName {
+            get {
+                return ResourceManager.GetString("EFMigrationHistoryName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ecom.
+        /// </summary>
+        internal static string EFMigrationHistorySchemeName {
+            get {
+                return ResourceManager.GetString("EFMigrationHistorySchemeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PostgresqlLocal.
         /// </summary>
         internal static string PostgresqlLocal {
             get {
                 return ResourceManager.GetString("PostgresqlLocal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PostgresqlOrchestration.
+        /// </summary>
+        internal static string PostgresqlOrchestration {
+            get {
+                return ResourceManager.GetString("PostgresqlOrchestration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RedisCache.
+        /// </summary>
+        internal static string RegisCacheSectionName {
+            get {
+                return ResourceManager.GetString("RegisCacheSectionName", resourceCulture);
             }
         }
     }
